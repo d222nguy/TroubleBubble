@@ -1,0 +1,28 @@
+{
+  "name": "bubble-tea",
+  "version": "1.0.0",
+  "description": "",
+  "main": "bubble_tea_server.js",
+
+  "engines":{
+    "node": "12.18.3",
+    "npm": "6.14.6"
+  },
+ "scripts": {
+    "client-install": "npm install --prefix bubble_tea_client",
+    "server": "nodemon bubble_tea_server.js",
+    "client": "npm start --prefix bubble_tea_client",
+    "dev": "concurrently \"npm run bubble_tea_server\" \"npm run bubble_tea_client\"",
+    "start": "node bubble_tea_server.js",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix bubble_tea_client && npm run build --prefix bubble_tea_client"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.12.8",
+    "nodemon": "^2.0.7",
+    "stripe": "^8.148.0",
+    "uuid": "^8.3.2"
+  }
+}
